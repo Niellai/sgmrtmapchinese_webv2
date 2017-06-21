@@ -1,0 +1,23 @@
+{
+  "info": "information",
+  "ave": "avenue",
+  "blvd": "boulevard",
+  "ln": "lane",
+  "rd": "road",
+  "st": "street",
+  "svc": "service",
+  "svcs": "services",
+  "stn": "station",
+  "stns": "stations",
+  "spd": "speed",
+  "b/w": "between",
+  "btw": "between",
+  "pls": "please",
+  "min": "minute",
+  "mins": "minutes",
+  "ard": "around",
+  "mth": "month",
+  "mths": "months",
+  "&amp;": "and",
+  "&": "and"
+}

@@ -1,0 +1,700 @@
+[{
+	"name": "Aljunied",
+	"ch_name": "阿裕尼",
+	"id": "EW9"
+},
+{
+	"name": "Kallang",
+	"ch_name": "加冷",
+	"id": "EW10"
+},
+{
+	"name": "Yio Chu Kang",
+	"ch_name": "杨厝港",
+	"id": "NS15"
+},
+{
+	"name": "Paya Lebar",
+	"ch_name": "巴耶利峇",
+	"id": "EW8;CC9"
+},
+{
+	"name": "Tampines",
+	"ch_name": "淡滨尼",
+	"id": "EW2;DT32"
+},
+{
+	"name": "Tanah Merah",
+	"ch_name": "丹那美拉",
+	"id": "EW4"
+},
+{
+	"name": "Bedok",
+	"ch_name": "勿洛",
+	"id": "EW5"
+},
+{
+	"name": "Changi Airport",
+	"ch_name": "樟宜机场",
+	"id": "CG2"
+},
+{
+	"name": "Expo",
+	"ch_name": "博览",
+	"id": "CG1;DT35"
+},
+{
+	"name": "Lavender",
+	"ch_name": "劳明达",
+	"id": "EW11"
+},
+{
+	"name": "Bugis",
+	"ch_name": "武吉士",
+	"id": "EW12;DT14"
+},
+{
+	"name": "Tiong Bahru",
+	"ch_name": "中峇鲁",
+	"id": "EW17"
+},
+{
+	"name": "Redhill",
+	"ch_name": "红山",
+	"id": "EW18"
+},
+{
+	"name": "Queenstown",
+	"ch_name": "女皇镇",
+	"id": "EW19"
+},
+{
+	"name": "Commonwealth",
+	"ch_name": "联邦",
+	"id": "EW20"
+},
+{
+	"name": "Buona Vista",
+	"ch_name": "波那维斯达",
+	"id": "EW21;CC22"
+},
+{
+	"name": "Dover",
+	"ch_name": "杜佛",
+	"id": "EW22"
+},
+{
+	"name": "Clementi",
+	"ch_name": "金文泰",
+	"id": "EW23"
+},
+{
+	"name": "Jurong East",
+	"ch_name": "裕廊东",
+	"id": "NS1;EW24"
+},
+{
+	"name": "Chinese Garden",
+	"ch_name": "裕华园",
+	"id": "EW25"
+},
+{
+	"name": "Lakeside",
+	"ch_name": "湖畔",
+	"id": "EW26"
+},
+{
+	"name": "Raffles Place",
+	"ch_name": "莱佛士坊",
+	"id": "EW14;NS26"
+},
+{
+	"name": "Marina Bay",
+	"ch_name": "滨海湾",
+	"id": "NS27;CE2;TE20"
+},
+{
+	"name": "Dhoby Ghaut",
+	"ch_name": "多美歌",
+	"id": "NE6;NS24;CC1"
+},
+{
+	"name": "Sengkang",
+	"ch_name": "盛港",
+	"id": "NE16;STC"
+},
+{
+	"name": "Buangkok",
+	"ch_name": "万国",
+	"id": "NE15"
+},
+{
+	"name": "Hougang",
+	"ch_name": "后港",
+	"id": "NE14"
+},
+{
+	"name": "Kovan",
+	"ch_name": "高文",
+	"id": "NE13"
+},
+{
+	"name": "Punggol",
+	"ch_name": "榜鹅",
+	"id": "NE17;PTC"
+},
+{
+	"name": "Potong Pasir",
+	"ch_name": "波东巴西",
+	"id": "NE10"
+},
+{
+	"name": "Serangoon",
+	"ch_name": "实龙岗",
+	"id": "NE12;CC13"
+},
+{
+	"name": "Boon Keng",
+	"ch_name": "文庆",
+	"id": "NE9"
+},
+{
+	"name": "Farrer Park",
+	"ch_name": "花拉公园",
+	"id": "NE8"
+},
+{
+	"name": "Little India",
+	"ch_name": "小印度",
+	"id": "NE7;DT12"
+},
+{
+	"name": "Chinatown",
+	"ch_name": "牛车水",
+	"id": "NE4;DT19"
+},
+{
+	"name": "HarbourFront",
+	"ch_name": "港湾",
+	"id": "NE1;CC29"
+},
+{
+	"name": "Ranggung",
+	"ch_name": "兰岗",
+	"id": "SE5"
+},
+{
+	"name": "Boon Lay",
+	"ch_name": "文礼",
+	"id": "EW27"
+},
+{
+	"name": "Pioneer",
+	"ch_name": "先驱",
+	"id": "EW28"
+},
+{
+	"name": "Joo Koon",
+	"ch_name": "裕群",
+	"id": "EW29"
+},
+{
+	"name": "Bartley",
+	"ch_name": "巴特礼",
+	"id": "CC12"
+},
+{
+	"name": "Bras Basah",
+	"ch_name": "百胜",
+	"id": "CC2"
+},
+{
+	"name": "Esplanade",
+	"ch_name": "滨海中心",
+	"id": "CC3"
+},
+{
+	"name": "Promenade",
+	"ch_name": "宝门廊",
+	"id": "CC4;DT15"
+},
+{
+	"name": "Nicoll Highway",
+	"ch_name": "尼诰大道",
+	"id": "CC5"
+},
+{
+	"name": "Stadium",
+	"ch_name": "体育场",
+	"id": "CC6"
+},
+{
+	"name": "Mountbatten",
+	"ch_name": "蒙巴登",
+	"id": "CC7"
+},
+{
+	"name": "Dakota",
+	"ch_name": "达科达",
+	"id": "CC8"
+},
+{
+	"name": "MacPherson",
+	"ch_name": "麦波申",
+	"id": "CC10;DT26"
+},
+{
+	"name": "Tai Seng",
+	"ch_name": "大成",
+	"id": "CC11"
+},
+{
+	"name": "Telok Blangah",
+	"ch_name": "直落布兰雅",
+	"id": "CC28"
+},
+{
+	"name": "Labrador Park",
+	"ch_name": "拉柏多公园",
+	"id": "CC27"
+},
+{
+	"name": "Pasir Panjang",
+	"ch_name": "巴西班让",
+	"id": "CC26"
+},
+{
+	"name": "Haw Par Villa",
+	"ch_name": "虎豹别墅",
+	"id": "CC25"
+},
+{
+	"name": "Kent Ridge",
+	"ch_name": "肯特岗",
+	"id": "CC24"
+},
+{
+	"name": "one-north",
+	"ch_name": "纬壹",
+	"id": "CC23"
+},
+{
+	"name": "Holland Village",
+	"ch_name": "荷兰村",
+	"id": "CC21"
+},
+{
+	"name": "Farrer Road",
+	"ch_name": "花拉路",
+	"id": "CC20"
+},
+{
+	"name": "Caldecott",
+	"ch_name": "加利谷",
+	"id": "CC17;TE9"
+},
+{
+	"name": "Cheng Lim",
+	"ch_name": "振林",
+	"id": "SW1"
+},
+{
+	"name": "Farmway",
+	"ch_name": "农道",
+	"id": "SW2"
+},
+{
+	"name": "Fernvale",
+	"ch_name": "芬微",
+	"id": "SW5"
+},
+{
+	"name": "Kupang",
+	"ch_name": "古邦",
+	"id": "SW3"
+},
+{
+	"name": "Thanggam",
+	"ch_name": "丹甘",
+	"id": "SW4"
+},
+{
+	"name": "Layar",
+	"ch_name": "拉雅",
+	"id": "SW6"
+},
+{
+	"name": "Tongkang",
+	"ch_name": "同港",
+	"id": "SW7"
+},
+{
+	"name": "Renjong",
+	"ch_name": "仁宗",
+	"id": "SW8"
+},
+{
+	"name": "Sentosa",
+	"ch_name": "圣淘沙",
+	"id": "Sentosa1"
+},
+{
+	"name": "Waterfront",
+	"ch_name": "滨海",
+	"id": "Sentosa2"
+},
+{
+	"name": "Imbiah",
+	"ch_name": "英比奥",
+	"id": "Sentosa3"
+},
+{
+	"name": "Beach",
+	"ch_name": "海滩",
+	"id": "Sentosa4"
+},
+{
+	"name": "Kembangan",
+	"ch_name": "景万岸",
+	"id": "EW6"
+},
+{
+	"name": "Bayfront",
+	"ch_name": "海湾舫",
+	"id": "CE1;DT16"
+},
+{
+	"name": "Simei",
+	"ch_name": "四美",
+	"id": "EW3"
+},
+{
+	"name": "Ang Mo Kio",
+	"ch_name": "宏茂桥",
+	"id": "NS16"
+},
+{
+	"name": "Bishan",
+	"ch_name": "碧山",
+	"id": "NS17;CC15"
+},
+{
+	"name": "Bukit Batok",
+	"ch_name": "武吉巴督",
+	"id": "NS2"
+},
+{
+	"name": "Outram Park",
+	"ch_name": "欧南园",
+	"id": "NE3;EW16;TE17"
+},
+{
+	"name": "Ten Mile Junction",
+	"ch_name": "十里广场",
+	"id": "BP14"
+},
+{
+	"name": "Newton",
+	"ch_name": "纽顿",
+	"id": "NS21;DT11"
+},
+{
+	"name": "Marina South Pier",
+	"ch_name": "滨海南码头",
+	"id": "NS28"
+},
+{
+	"name": "Admiralty",
+	"ch_name": "海军部",
+	"id": "NS10"
+},
+{
+	"name": "Bangkit",
+	"ch_name": "万吉",
+	"id": "BP9"
+},
+{
+	"name": "Braddell",
+	"ch_name": "布莱德",
+	"id": "NS18"
+},
+{
+	"name": "Bukit Gombak",
+	"ch_name": "武吉甘柏",
+	"id": "NS3"
+},
+{
+	"name": "City Hall",
+	"ch_name": "政府大厦",
+	"id": "EW13;NS25"
+},
+{
+	"name": "Clarke Quay",
+	"ch_name": "克拉码头",
+	"id": "NE5"
+},
+{
+	"name": "Downtown",
+	"ch_name": "市中心",
+	"id": "DT17"
+},
+{
+	"name": "Fajar",
+	"ch_name": "法嘉",
+	"id": "BP10"
+},
+{
+	"name": "Jelapang",
+	"ch_name": "泽拉邦",
+	"id": "BP12"
+},
+{
+	"name": "Keat Hong",
+	"ch_name": "吉丰",
+	"id": "BP3"
+},
+{
+	"name": "Khatib",
+	"ch_name": "卡迪",
+	"id": "NS14"
+},
+{
+	"name": "Kranji",
+	"ch_name": "克兰芝",
+	"id": "NS7"
+},
+{
+	"name": "Lorong Chuan",
+	"ch_name": "罗弄泉",
+	"id": "CC14"
+},
+{
+	"name": "Marsiling",
+	"ch_name": "马西岭",
+	"id": "NS8"
+},
+{
+	"name": "Novena",
+	"ch_name": "诺维娜",
+	"id": "NS20"
+},
+{
+	"name": "Orchard",
+	"ch_name": "乌节",
+	"id": "NS22;TE14"
+},
+{
+	"name": "Pasir Ris",
+	"ch_name": "巴西立",
+	"id": "EW1"
+},
+{
+	"name": "Pending",
+	"ch_name": "秉定",
+	"id": "BP8"
+},
+{
+	"name": "Petir",
+	"ch_name": "柏提",
+	"id": "BP7"
+},
+{
+	"name": "Phoenix",
+	"ch_name": "凤凰",
+	"id": "BP5"
+},
+{
+	"name": "Segar",
+	"ch_name": "实加",
+	"id": "BP11"
+},
+{
+	"name": "Sembawang",
+	"ch_name": "三巴旺",
+	"id": "NS11"
+},
+{
+	"name": "Senja",
+	"ch_name": "信佳",
+	"id": "BP13"
+},
+{
+	"name": "Somerset",
+	"ch_name": "索美塞",
+	"id": "NS23"
+},
+{
+	"name": "South View",
+	"ch_name": "南景",
+	"id": "BP2"
+},
+{
+	"name": "Tanjong Pagar",
+	"ch_name": "丹戎巴葛",
+	"id": "EW15"
+},
+{
+	"name": "Teck Whye",
+	"ch_name": "德惠",
+	"id": "BP4"
+},
+{
+	"name": "Telok Ayer",
+	"ch_name": "直落亚逸",
+	"id": "DT18"
+},
+{
+	"name": "Toa Payoh",
+	"ch_name": "大巴窑",
+	"id": "NS19"
+},
+{
+	"name": "Woodlands",
+	"ch_name": "兀兰",
+	"id": "NS9;TE2"
+},
+{
+	"name": "Yew Tee",
+	"ch_name": "油池",
+	"id": "NS5"
+},
+{
+	"name": "Yishun",
+	"ch_name": "义顺",
+	"id": "NS13"
+},
+{
+	"name": "Bakau",
+	"ch_name": "码高",
+	"id": "SE3"
+},
+{
+	"name": "Compassvale",
+	"ch_name": "康埔桦",
+	"id": "SE1"
+},
+{
+	"name": "Coral Edge",
+	"ch_name": "珊瑚",
+	"id": "PE3"
+},
+{
+	"name": "Cove",
+	"ch_name": "海湾",
+	"id": "PE1"
+},
+{
+	"name": "Damai",
+	"ch_name": "达迈",
+	"id": "PE7"
+},
+{
+	"name": "Kadaloor",
+	"ch_name": "卡达鲁",
+	"id": "PE5"
+},
+{
+	"name": "Kangkar",
+	"ch_name": "港脚",
+	"id": "SE4"
+},
+{
+	"name": "Meridian",
+	"ch_name": "丽园",
+	"id": "PE2"
+},
+{
+	"name": "Oasis",
+	"ch_name": "绿洲",
+	"id": "PE6"
+},
+{
+	"name": "Riviera",
+	"ch_name": "里维拉",
+	"id": "PE4"
+},
+{
+	"name": "Rumbia",
+	"ch_name": "棕美",
+	"id": "SE2"
+},
+{
+	"name": "Soo Teck",
+	"ch_name": "树德",
+	"id": "PW7"
+},
+{
+	"name": "Sumang",
+	"ch_name": "苏芒",
+	"id": "PW6"
+},
+{
+	"name": "Woodleigh",
+	"ch_name": "兀里",
+	"id": "NE11"
+},
+{
+	"name": "Bukit Panjang",
+	"ch_name": "武吉班让",
+	"id": "DT1;BP6"
+},
+{
+	"name": "Choa Chu Kang",
+	"ch_name": "蔡厝港",
+	"id": "NS4;BP1"
+},
+{
+	"name": "Marymount",
+	"ch_name": "玛丽蒙",
+	"id": "CC16"
+},
+{
+	"name": "Eunos",
+	"ch_name": "友诺士",
+	"id": "EW7"
+},
+{
+	"name": "Botanic Gardens",
+	"ch_name": "植物园",
+	"id": "CC19;DT9"
+},
+{
+	"name": "Cashew",
+	"ch_name": "凯秀",
+	"id": "DT2"
+},
+{
+	"name": "Hillview",
+	"ch_name": "山景",
+	"id": "DT3"
+},
+{
+	"name": "Beauty World",
+	"ch_name": "美世界",
+	"id": "DT5"
+},
+{
+	"name": "King Albert Park",
+	"ch_name": "阿尔柏王园",
+	"id": "DT6"
+},
+{
+	"name": "Sixth Avenue",
+	"ch_name": "第六道",
+	"id": "DT7"
+},
+{
+	"name": "Tan Kah Kee",
+	"ch_name": "陈嘉庚",
+	"id": "DT8"
+},
+{
+	"name": "Stevens",
+	"ch_name": "史蒂芬",
+	"id": "DT10;TE11"
+},
+{
+	"name": "Rochor",
+	"ch_name": "梧槽",
+	"id": "DT13"
+}]
