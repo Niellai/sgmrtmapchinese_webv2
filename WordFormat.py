@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[1]:
+# In[56]:
 
 import json
 import codecs
@@ -15,11 +15,12 @@ import import_notebook
 from Translator import Translator
 
 
-# In[2]:
+# In[59]:
 
 '''
 Replacement of abb words and train line and station names
 '''
+
 class WordFormat:
     
     def __init__(self):        
@@ -38,8 +39,9 @@ class WordFormat:
         
     def replaceAbbsWords(self, sentence): 
         try:
-            for key in self.abb_replace.keys():        
+            for key in self.abb_replace:        
                 sentence = re.sub(r"\b{}\b".format(key), self.abb_replace[key], sentence, flags=re.IGNORECASE)    
+                sentence = sentence.replace('&amp;', 'and')
             return sentence
         except Exception as e:
             print("replaceAbbsWords Error: {}".format(e))
@@ -77,17 +79,19 @@ class WordFormat:
             return replaced_tweet, translated_tweet           
         except Exception as e:
             print("Error in translateTweet: {}".format(e))
+            
+    def html_escape(self, text):
+        """Produce entities within text."""
+        return "".join(html_escape_table.get(c,c) for c in text)
 
 
-# In[6]:
+# In[55]:
 
 '''
 Example / Test methods
 '''
-# sentence = '[EWL]UPDATE: Due to a track circuit fault at #BuonaVista,pls add 5mins travel time from #Redhill to #Dover,train svc is still available.'
+# sentence = 'Tweet received: Please be informed that svc 192 will skip bus stops along Tuas Ave 1 &amp; Tuas Ave 12, for both directions, due to a building on fire.'
 # wordFormat = WordFormat()
-# wordFormat.translateTweet(sentence)
-
-
+# wordFormat.replaceAbbsWords(sentence)
 
 

@@ -46,7 +46,7 @@ class Tweet:
 
             # Get a sample of the public data following through Twitter
             # location lng/lat pair, 1st: south-west 2nd: north-east 
-            stream = twitter_stream.statuses.filter(follow="307781209, 80337313", language="en")
+            stream = twitter_stream.statuses.filter(follow="307781209, 80337313, 3087502272", language="en")
         except Exception as e: 
             print("Connecting to twitter error: {}".format(e))       
         

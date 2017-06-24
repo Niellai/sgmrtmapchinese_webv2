@@ -18,6 +18,18 @@
   "ard": "around",
   "mth": "month",
   "mths": "months",
-  "&amp;": "and",
-  "&": "and"
+  "Sun" : "Sunday",
+  "Sat" : "Saturday",
+  "Mon" : "Monday",
+  "Tue" : "Tuesday",
+  "Wed" : "Wednesday",
+  "Thur" : "Thursday",
+  "Fri" : "Friday",
+  "alg" : "along",
+  "abt" : "about",
+  "gdns" : "gardens",
+  "ctr" : "centre",
+  "opp" : "opposite",
+  "bldg" : "building",
+  "twds" : "towards"
 }
