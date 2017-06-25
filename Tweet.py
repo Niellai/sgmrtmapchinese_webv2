@@ -17,12 +17,12 @@ from WordFormat import WordFormat
 from ExportSheet import ExportSheet
 
 
-# In[12]:
+# In[1]:
 
 class Tweet:
     
     # define keys to look out for in tweet msg
-    keyList = ['incident', 'no train', 'fault', 'resumed', 'svc',
+    keyList = ['incident', 'no train', 'fault', 'resumed', 'svc', 'svcs',
            'service', 'serivces', '[NSL]', '[EWL]', '[CCL]', '[DTL]', '[TSL]']
 
     # Variables that contains the user credentials to access Twitter API 
@@ -102,11 +102,13 @@ class Tweet:
         return re.compile(r'\b({0})\b'.format(w), flags=re.IGNORECASE).search
 
 
-# In[11]:
+# In[ ]:
 
 # Testing purpose
 # wordFormat = WordFormat()
-# tweet = Tweet()
+tweet = Tweet()
 # dataJson = wordFormat.readJsonFile('singleTweet.txt')
 # tweet.extractTweet(json.dumps(dataJson))
+
+tweet.listen()
 
