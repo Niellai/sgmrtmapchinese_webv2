@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[2]:
+# In[7]:
 
 import json
 import re
@@ -17,7 +17,7 @@ from WordFormat import WordFormat
 from ExportSheet import ExportSheet
 
 
-# In[14]:
+# In[41]:
 
 class Tweet:
     
@@ -49,7 +49,7 @@ class Tweet:
             # My ID: 80337313
             # SMRT_Singapore: 307781209
             # SBSTransit_Ltd: 3087502272
-            stream = twitter_stream.statuses.filter(follow="307781209, 3087502272", language="en")
+            stream = twitter_stream.statuses.filter(follow="307781209, 3087502272, 80337313", language="en")
         except Exception as e: 
             print("Connecting to twitter error: {}".format(e))       
         
@@ -58,6 +58,8 @@ class Tweet:
         for tweet in stream:
             try:            
                 tweetJson = json.dumps(tweet)
+                print(tweetJson)
+                
                 jsonData = self.extractTweet(tweetJson)                 
                 ori_tweet = jsonData['text']
                 
@@ -75,17 +77,23 @@ class Tweet:
     # Extract tweet and return json object             
     def extractTweet(self, tweetsStr):
         try:
-            jsonData = json.loads(tweetsStr)            
-            # ori_tweet = jsonData['text']        
-            data = {}
-            userData = jsonData['user']
+            jsonData = json.loads(tweetsStr)                        
+            data = {}            
+            # Extracting userID
+            userData = jsonData['user']                        
             userID = userData['id_str']
             if userID == '3087502272':
                 data['text'] = "[Bus service]{}".format(jsonData['text'])
             else:
                 data['text'] = jsonData['text']
-#             else: # DEBUG: Listen to my own account
-#                 data['text'] = jsonData['text']
+
+            # Extracting entities, for media url            
+            if 'entities' in jsonData:
+                entitiesData = jsonData['entities']
+                mediaData = entitiesData['media'][0]
+                media_url = mediaData['media_url']                        
+                data['media_url'] = media_url                
+            
             data['timestamp_ms'] = int(jsonData['timestamp_ms'])        
             jsonDataStr = json.dumps(data, ensure_ascii=False)   
             print("Tweet received: {}".format(data['text']))
@@ -107,13 +115,14 @@ class Tweet:
         return re.compile(r'\b({0})\b'.format(w), flags=re.IGNORECASE).search
 
 
-# In[15]:
+# In[42]:
 
 # Testing purpose
 # wordFormat = WordFormat()
 # tweet = Tweet()
-# dataJson = wordFormat.readJsonFile('singleTweet.txt')
-# tweet.extractTweet(json.dumps(dataJson))
 
-#tweet.listen()
+# jsonData = wordFormat.readJsonFile('singleTweet.txt')
+# jsonStr = tweet.extractTweet(json.dumps(jsonData))
+
+# print(jsonStr)
 
