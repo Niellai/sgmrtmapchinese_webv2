@@ -17,7 +17,7 @@ from WordFormat import WordFormat
 from ExportSheet import ExportSheet
 
 
-# In[1]:
+# In[14]:
 
 class Tweet:
     
@@ -79,8 +79,10 @@ class Tweet:
             userID = userData['id_str']
             if userID == '307781209':
                 data['text'] = "[Bus service]{}".format(jsonData['text'])
-            else:
-                data['text'] = jsonData['text']                     
+            elif userID == '80337313':
+                data['text'] = jsonData['text']
+#             else: # DEBUG: Listen to my own account
+#                 data['text'] = jsonData['text']
             data['timestamp_ms'] = int(jsonData['timestamp_ms'])        
             jsonDataStr = json.dumps(data, ensure_ascii=False)   
             print("Tweet received: {}".format(data['text']))
@@ -102,13 +104,13 @@ class Tweet:
         return re.compile(r'\b({0})\b'.format(w), flags=re.IGNORECASE).search
 
 
-# In[ ]:
+# In[15]:
 
 # Testing purpose
 # wordFormat = WordFormat()
-tweet = Tweet()
+# tweet = Tweet()
 # dataJson = wordFormat.readJsonFile('singleTweet.txt')
 # tweet.extractTweet(json.dumps(dataJson))
 
-tweet.listen()
+#tweet.listen()
 
