@@ -47,6 +47,8 @@ class Tweet:
             # Get a sample of the public data following through Twitter
             # location lng/lat pair, 1st: south-west 2nd: north-east 
             # My ID: 80337313
+            # SMRT_Singapore: 307781209
+            # SBSTransit_Ltd: 3087502272
             stream = twitter_stream.statuses.filter(follow="307781209, 3087502272", language="en")
         except Exception as e: 
             print("Connecting to twitter error: {}".format(e))       
@@ -78,9 +80,9 @@ class Tweet:
             data = {}
             userData = jsonData['user']
             userID = userData['id_str']
-            if userID == '307781209':
+            if userID == '3087502272':
                 data['text'] = "[Bus service]{}".format(jsonData['text'])
-            elif userID == '80337313':
+            else:
                 data['text'] = jsonData['text']
 #             else: # DEBUG: Listen to my own account
 #                 data['text'] = jsonData['text']
