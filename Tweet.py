@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[5]:
+# In[2]:
 
 import json
 import re
@@ -17,7 +17,7 @@ from WordFormat import WordFormat
 from ExportSheet import ExportSheet
 
 
-# In[6]:
+# In[12]:
 
 class Tweet:
     
@@ -46,7 +46,7 @@ class Tweet:
 
             # Get a sample of the public data following through Twitter
             # location lng/lat pair, 1st: south-west 2nd: north-east 
-            stream = twitter_stream.statuses.filter(follow="307781209, 80337313, 3087502272", language="en")
+            stream = twitter_stream.statuses.filter(follow="307781209, 80337313", language="en")
         except Exception as e: 
             print("Connecting to twitter error: {}".format(e))       
         
@@ -72,10 +72,15 @@ class Tweet:
     # Extract tweet and return json object             
     def extractTweet(self, tweetsStr):
         try:
-            jsonData = json.loads(tweetsStr)
+            jsonData = json.loads(tweetsStr)            
             # ori_tweet = jsonData['text']        
             data = {}
-            data['text'] = jsonData['text']                
+            userData = jsonData['user']
+            userID = userData['id_str']
+            if userID == '307781209':
+                data['text'] = "[Bus service]{}".format(jsonData['text'])
+            else:
+                data['text'] = jsonData['text']                     
             data['timestamp_ms'] = int(jsonData['timestamp_ms'])        
             jsonDataStr = json.dumps(data, ensure_ascii=False)   
             print("Tweet received: {}".format(data['text']))
@@ -97,8 +102,11 @@ class Tweet:
         return re.compile(r'\b({0})\b'.format(w), flags=re.IGNORECASE).search
 
 
-# In[ ]:
+# In[11]:
 
+# Testing purpose
+# wordFormat = WordFormat()
 # tweet = Tweet()
-# tweet.listen()
+# dataJson = wordFormat.readJsonFile('singleTweet.txt')
+# tweet.extractTweet(json.dumps(dataJson))
 

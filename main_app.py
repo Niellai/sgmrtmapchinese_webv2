@@ -1,12 +1,7 @@
-
 # coding: utf-8
 
-# In[3]:
-
+import re
 from Tweet import Tweet
-
-
-# In[ ]:
 
 tweet = Tweet()
 tweet.listen()
