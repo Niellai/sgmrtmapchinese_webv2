@@ -131,12 +131,12 @@ class Tweet:
 # In[48]:
 
 # Testing purpose
-wordFormat = WordFormat()
-tweet = Tweet()
-# tweet.listen()
+# wordFormat = WordFormat()
+# tweet = Tweet()
+# # tweet.listen()
 
-jsonData = wordFormat.readJsonFile('error2.json')
-jsonStr = tweet.extractTweet(json.dumps(jsonData))
-print(jsonStr)
+# jsonData = wordFormat.readJsonFile('error2.json')
+# jsonStr = tweet.extractTweet(json.dumps(jsonData))
+# print(jsonStr)
 
 
