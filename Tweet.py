@@ -17,7 +17,7 @@ from WordFormat import WordFormat
 from ExportSheet import ExportSheet
 
 
-# In[39]:
+# In[41]:
 
 class Tweet:
     
@@ -96,14 +96,17 @@ class Tweet:
                     media_url = mediaData['media_url']
                     data['media_url'] = media_url                    
             except Exception as e:
+                print('extractTweet > extended_tweet error:{}'.format(e))                    
                 try:
                     if 'entities' in jsonData:
                         entitiesData = jsonData['entities']
-                        mediaData = entitiesData['media']
+                        mediaData = entitiesData['media'][0]
                         media_url = mediaData['media_url']
                         data['media_url'] = media_url
                 except Exception as e:
-                    print('extractTweet error:{}'.format(e))                
+                    print('extractTweet > entities error:{}'.format(e))       
+                
+            print("media_url:{}".format(data['media_url']))
             
             data['timestamp_ms'] = int(jsonData['timestamp_ms'])        
             jsonDataStr = json.dumps(data, ensure_ascii=False)   
