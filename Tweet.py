@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[7]:
+# In[38]:
 
 import json
 import re
@@ -17,7 +17,7 @@ from WordFormat import WordFormat
 from ExportSheet import ExportSheet
 
 
-# In[41]:
+# In[37]:
 
 class Tweet:
     
@@ -87,12 +87,16 @@ class Tweet:
             else:
                 data['text'] = jsonData['text']
 
-            # Extracting entities, for media url            
-            if 'entities' in jsonData:
-                entitiesData = jsonData['entities']
-                mediaData = entitiesData['media'][0]
-                media_url = mediaData['media_url']                        
-                data['media_url'] = media_url                
+            # Extracting entities, for media url         
+            try:
+                if 'extended_tweet' in jsonData:
+                    extTweetData = jsonData['extended_tweet']
+                    entitiesData = extTweetData['entities']
+                    mediaData = entitiesData['media'][0]
+                    media_url = mediaData['media_url']
+                    data['media_url'] = media_url                    
+            except Exception as e:
+                print('ExtractTweet entities error: {}'.format(e))
             
             data['timestamp_ms'] = int(jsonData['timestamp_ms'])        
             jsonDataStr = json.dumps(data, ensure_ascii=False)   
@@ -115,14 +119,15 @@ class Tweet:
         return re.compile(r'\b({0})\b'.format(w), flags=re.IGNORECASE).search
 
 
-# In[42]:
+# In[36]:
 
 # Testing purpose
 # wordFormat = WordFormat()
 # tweet = Tweet()
+# tweet.listen()
 
-# jsonData = wordFormat.readJsonFile('singleTweet.txt')
+# jsonData = wordFormat.readJsonFile('error.json')
 # jsonStr = tweet.extractTweet(json.dumps(jsonData))
-
 # print(jsonStr)
+
 
