@@ -17,7 +17,7 @@ from WordFormat import WordFormat
 from ExportSheet import ExportSheet
 
 
-# In[41]:
+# In[47]:
 
 class Tweet:
     
@@ -96,17 +96,16 @@ class Tweet:
                     media_url = mediaData['media_url']
                     data['media_url'] = media_url                    
             except Exception as e:
-                print('extractTweet > extended_tweet error:{}'.format(e))                    
-                try:
-                    if 'entities' in jsonData:
-                        entitiesData = jsonData['entities']
-                        mediaData = entitiesData['media'][0]
-                        media_url = mediaData['media_url']
-                        data['media_url'] = media_url
-                except Exception as e:
-                    print('extractTweet > entities error:{}'.format(e))       
+                print('extractTweet > extended_tweet error:{}'.format(e)) 
                 
-            print("media_url:{}".format(data['media_url']))
+            try:
+                if 'entities' in jsonData:
+                    entitiesData = jsonData['entities']
+                    mediaData = entitiesData['media'][0]
+                    media_url = mediaData['media_url']
+                    data['media_url'] = media_url
+            except Exception as e:
+                print('extractTweet > entities error:{}'.format(e))                               
             
             data['timestamp_ms'] = int(jsonData['timestamp_ms'])        
             jsonDataStr = json.dumps(data, ensure_ascii=False)   
@@ -129,15 +128,15 @@ class Tweet:
         return re.compile(r'\b({0})\b'.format(w), flags=re.IGNORECASE).search
 
 
-# In[40]:
+# In[48]:
 
 # Testing purpose
-# wordFormat = WordFormat()
-# tweet = Tweet()
+wordFormat = WordFormat()
+tweet = Tweet()
 # tweet.listen()
 
-# jsonData = wordFormat.readJsonFile('error.json')
-# jsonStr = tweet.extractTweet(json.dumps(jsonData))
-# print(jsonStr)
+jsonData = wordFormat.readJsonFile('error2.json')
+jsonStr = tweet.extractTweet(json.dumps(jsonData))
+print(jsonStr)
 
 
