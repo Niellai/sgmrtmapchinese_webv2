@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[56]:
+# In[2]:
 
 import json
 import codecs
@@ -15,7 +15,7 @@ import import_notebook
 from Translator import Translator
 
 
-# In[59]:
+# In[1]:
 
 '''
 Replacement of abb words and train line and station names
@@ -79,19 +79,16 @@ class WordFormat:
             return replaced_tweet, translated_tweet           
         except Exception as e:
             print("Error in translateTweet: {}".format(e))
-            
-    def html_escape(self, text):
-        """Produce entities within text."""
-        return "".join(html_escape_table.get(c,c) for c in text)
 
 
-# In[55]:
+# In[15]:
 
 '''
 Example / Test methods
 '''
-# sentence = 'Tweet received: Please be informed that svc 192 will skip bus stops along Tuas Ave 1 &amp; Tuas Ave 12, for both directions, due to a building on fire.'
+# sentence = 'SMRT launches new three-door bus on service 190 between Choa Chu Kang and Chinatown'
 # wordFormat = WordFormat()
-# wordFormat.replaceAbbsWords(sentence)
+# translator = Translator()
 
+# replaced_tweet = wordFormat.replaceAbbsWords(sentence)
 

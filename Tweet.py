@@ -94,7 +94,8 @@ class Tweet:
                     entitiesData = extTweetData['entities']
                     mediaData = entitiesData['media'][0]
                     media_url = mediaData['media_url']
-                    data['media_url'] = media_url                    
+                    if len(media_url) > 0:
+                        data['media_url'] = media_url                    
             except Exception as e:
                 print('extractTweet > extended_tweet error:{}'.format(e)) 
                 
@@ -103,7 +104,8 @@ class Tweet:
                     entitiesData = jsonData['entities']
                     mediaData = entitiesData['media'][0]
                     media_url = mediaData['media_url']
-                    data['media_url'] = media_url
+                    if len(media_url) > 0:
+                        data['media_url'] = media_url
             except Exception as e:
                 print('extractTweet > entities error:{}'.format(e))                               
             

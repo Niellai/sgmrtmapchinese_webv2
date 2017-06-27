@@ -25,7 +25,7 @@ class Translator:
             translatedText = translatedObj['translatedText']
             print("Translate completed")
             return translatedText
-        except Expection as e:
+        except Exception as e:
             print("tranlateToChinese: {}".format(e))
         
         
