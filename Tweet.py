@@ -72,8 +72,8 @@ class Tweet:
                     if self.containKey(ori_tweet):
                         fcm.send_default(jsonData)                 
                 
-                    exportSheet.writeToSheet(jsonData['timestamp_ms'], ori_tweet, replaced_tweet, translated_tweet)
-                    print("Waiting for twitter msg...")
+                    exportSheet.writeToSheet(jsonData['timestamp_ms'], ori_tweet, replaced_tweet, translated_tweet)            
+                print("Waiting for twitter msg...\n")                
             except Exception as e: 
                 print("Error in tweet stream: {}".format(e))
 
@@ -135,7 +135,7 @@ class Tweet:
         return re.compile(r'\b({0})\b'.format(w), flags=re.IGNORECASE).search
 
 
-# In[16]:
+# In[2]:
 
 # Testing purpose
 # wordFormat = WordFormat()
@@ -145,5 +145,4 @@ class Tweet:
 # jsonData = wordFormat.readJsonFile('singleTweet.json')
 # jsonStr = tweet.extractTweet(json.dumps(jsonData))
 # print(jsonStr)
-
 
