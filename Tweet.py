@@ -79,6 +79,8 @@ class Tweet:
 
     # Extract tweet and return json object, return null when not send from targeted user             
     def extractTweet(self, tweetsStr):
+        exportSheet = ExportSheet()
+        
         try:
             jsonData = json.loads(tweetsStr)                        
             data = {}            
@@ -90,6 +92,7 @@ class Tweet:
             elif userID == '307781209' or userID == '80337313':
                 data['text'] = jsonData['text']
             else:
+                exportSheet.writeToSheet2(int(jsonData['timestamp_ms']), jsonData['text'])
                 return
             
             # Extracting entities, for media url         
