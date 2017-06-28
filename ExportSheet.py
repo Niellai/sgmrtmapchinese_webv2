@@ -9,7 +9,7 @@ import asyncio
 from oauth2client.service_account import ServiceAccountCredentials
 
 
-# In[2]:
+# In[4]:
 
 class ExportSheet:
    
@@ -32,8 +32,8 @@ class ExportSheet:
             print("writeToSheet Error: {}".format(e))
 
 
-# In[3]:
+# In[6]:
 
 # exportSheet = ExportSheet()
-# ExportSheet.writeToSheet('time', 'ori', 'replace', 'translated')
+# exportSheet.writeToSheet('time', 'ori', 'replace', 'translated')
 

@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[38]:
+# In[7]:
 
 import json
 import re
@@ -17,7 +17,7 @@ from WordFormat import WordFormat
 from ExportSheet import ExportSheet
 
 
-# In[47]:
+# In[2]:
 
 class Tweet:
     
@@ -32,6 +32,8 @@ class Tweet:
     CONSUMER_SECRET = '1yB0ydySHdFKYcMw0baxYkhzMPgzTkfYvNApoGdfCEnGVqTxV3'
 
     # Listen for tweet, will loop endlessly until exception occurs
+    # Refer to twitter API documentation
+    # https://dev.twitter.com/streaming/overview/request-parameters#follow
     def listen(self):
         wordFormat = WordFormat()
         fcm = FCM()
@@ -60,21 +62,22 @@ class Tweet:
                 tweetJson = json.dumps(tweet)
                 print(tweetJson)
                 
-                jsonData = self.extractTweet(tweetJson)                 
-                ori_tweet = jsonData['text']
+                jsonData = self.extractTweet(tweetJson)                                            
+                if jsonData != None:
+                    ori_tweet = jsonData['text']
                 
-                replaced_tweet, translated_tweet = wordFormat.translateTweet(jsonData['text'])               
-                jsonData['text'] = translated_tweet
+                    replaced_tweet, translated_tweet = wordFormat.translateTweet(jsonData['text'])               
+                    jsonData['text'] = translated_tweet
                 
-                if self.containKey(ori_tweet):
-                    fcm.send_default(jsonData)                 
+                    if self.containKey(ori_tweet):
+                        fcm.send_default(jsonData)                 
                 
-                exportSheet.writeToSheet(jsonData['timestamp_ms'], ori_tweet, replaced_tweet, translated_tweet)                
-                print("Waiting for twitter msg...")
+                    exportSheet.writeToSheet(jsonData['timestamp_ms'], ori_tweet, replaced_tweet, translated_tweet)
+                    print("Waiting for twitter msg...")
             except Exception as e: 
                 print("Error in tweet stream: {}".format(e))
 
-    # Extract tweet and return json object             
+    # Extract tweet and return json object, return null when not send from targeted user             
     def extractTweet(self, tweetsStr):
         try:
             jsonData = json.loads(tweetsStr)                        
@@ -84,9 +87,11 @@ class Tweet:
             userID = userData['id_str']
             if userID == '3087502272':
                 data['text'] = "[Bus service]{}".format(jsonData['text'])
-            else:
+            elif userID == '307781209':
                 data['text'] = jsonData['text']
-
+            else:
+                return
+            
             # Extracting entities, for media url         
             try:
                 if 'extended_tweet' in jsonData:
@@ -130,14 +135,14 @@ class Tweet:
         return re.compile(r'\b({0})\b'.format(w), flags=re.IGNORECASE).search
 
 
-# In[48]:
+# In[16]:
 
 # Testing purpose
 # wordFormat = WordFormat()
 # tweet = Tweet()
-# # tweet.listen()
+# # # tweet.listen()
 
-# jsonData = wordFormat.readJsonFile('error2.json')
+# jsonData = wordFormat.readJsonFile('singleTweet.json')
 # jsonStr = tweet.extractTweet(json.dumps(jsonData))
 # print(jsonStr)
 
