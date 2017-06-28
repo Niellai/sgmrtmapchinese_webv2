@@ -87,7 +87,7 @@ class Tweet:
             userID = userData['id_str']
             if userID == '3087502272':
                 data['text'] = "[Bus service]{}".format(jsonData['text'])
-            elif userID == '307781209' | userID == '80337313':
+            elif userID == '307781209' or userID == '80337313':
                 data['text'] = jsonData['text']
             else:
                 return
