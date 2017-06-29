@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[7]:
+# In[2]:
 
 import json
 import re
@@ -17,7 +17,7 @@ from WordFormat import WordFormat
 from ExportSheet import ExportSheet
 
 
-# In[2]:
+# In[10]:
 
 class Tweet:
     
@@ -81,10 +81,16 @@ class Tweet:
     def extractTweet(self, tweetsStr):
         exportSheet = ExportSheet()
         
-        try:
+        try:            
             jsonData = json.loads(tweetsStr)                        
-            data = {}            
+            
+            # Ignore retweet
+            if jsonData['retweeted'] == True:
+                print('Retweet ignored')
+                return
+            
             # Extracting userID
+            data = {}                        
             userData = jsonData['user']                        
             userID = userData['id_str']
             if userID == '3087502272':
@@ -138,12 +144,11 @@ class Tweet:
         return re.compile(r'\b({0})\b'.format(w), flags=re.IGNORECASE).search
 
 
-# In[2]:
+# In[9]:
 
 # Testing purpose
 # wordFormat = WordFormat()
 # tweet = Tweet()
-# # # tweet.listen()
 
 # jsonData = wordFormat.readJsonFile('singleTweet.json')
 # jsonStr = tweet.extractTweet(json.dumps(jsonData))
