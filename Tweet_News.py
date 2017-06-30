@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[2]:
+# In[1]:
 
 import json
 import re
@@ -12,31 +12,29 @@ from twitter import Twitter, OAuth, TwitterHTTPError, TwitterStream
 import import_notebook
 
 # Python notebook files
-from FCM import FCM
 from WordFormat import WordFormat
 from ExportSheet import ExportSheet
 
 
-# In[10]:
+# In[2]:
 
-class Tweet:
+class Tweet_News:
     
     # define keys to look out for in tweet msg
     keyList = ['incident', 'no train', 'fault', 'resumed', 'svc', 'svcs',
            'service', 'serivces', '[NSL]', '[EWL]', '[CCL]', '[DTL]', '[TSL]']
 
     # Variables that contains the user credentials to access Twitter API 
-    ACCESS_TOKEN = '80337313-lbccFWgRT0BM8VGvepY9foRbiAXbdKYJOo8kC1NFC'
-    ACCESS_SECRET = 'GyPBROB8XPkz3YwRQoJlyNg1kud4ylCPHS73z5M34V7Es'
-    CONSUMER_KEY = 'LZ30cTS3iKCZ6XDAlTeTD54xj'
-    CONSUMER_SECRET = '1yB0ydySHdFKYcMw0baxYkhzMPgzTkfYvNApoGdfCEnGVqTxV3'
+    ACCESS_TOKEN = '80337313-rAQ0Gt8CEe3qnrWiL6iJ0GyAcfS8d9hjrKGQQE9mG'
+    ACCESS_SECRET = 'fro20QRxZRMUjk4RtM2fLo6qqG5FKdP2jbI4ObkDH1xim'
+    CONSUMER_KEY = 'h6CH9ELrd3Xv6BIKpftJQJEjF'
+    CONSUMER_SECRET = 'Emy1z0aIQGF0aU8g9nuK8iAojUGH7oyMdNvuafYSKEkSK3nzkm'
 
     # Listen for tweet, will loop endlessly until exception occurs
     # Refer to twitter API documentation
     # https://dev.twitter.com/streaming/overview/request-parameters#follow
     def listen(self):
-        wordFormat = WordFormat()
-        fcm = FCM()
+        wordFormat = WordFormat()     
         exportSheet = ExportSheet()
         
         oauth = OAuth(self.ACCESS_TOKEN, self.ACCESS_SECRET, self.CONSUMER_KEY, self.CONSUMER_SECRET)  
@@ -50,7 +48,7 @@ class Tweet:
             # location lng/lat pair, 1st: south-west 2nd: north-east 
             # My ID: 80337313
             # ChannelNewsAsia:  38400130
-            stream = twitter_stream.statuses.filter(follow="307781209, 3087502272, 80337313", language="en")
+            stream = twitter_stream.statuses.filter(follow="38400130", language="en")
         except Exception as e: 
             print("Connecting to twitter error: {}".format(e))       
         
@@ -68,7 +66,7 @@ class Tweet:
                     replaced_tweet, translated_tweet = wordFormat.translateTweet(jsonData['text'])               
                     jsonData['text'] = translated_tweet                                 
                 
-                    exportSheet.writeToSheet(jsonData['timestamp_ms'], ori_tweet, replaced_tweet, translated_tweet)            
+                    exportSheet.writeToSheet2(jsonData['timestamp_ms'], ori_tweet, replaced_tweet, translated_tweet)
                 print("Waiting for twitter msg...\n")                
             except Exception as e: 
                 print("Error in tweet stream: {}".format(e))
