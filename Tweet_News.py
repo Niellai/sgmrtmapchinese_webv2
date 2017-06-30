@@ -49,8 +49,7 @@ class Tweet:
             # Get a sample of the public data following through Twitter
             # location lng/lat pair, 1st: south-west 2nd: north-east 
             # My ID: 80337313
-            # SMRT_Singapore: 307781209
-            # SBSTransit_Ltd: 3087502272
+            # ChannelNewsAsia:  38400130
             stream = twitter_stream.statuses.filter(follow="307781209, 3087502272, 80337313", language="en")
         except Exception as e: 
             print("Connecting to twitter error: {}".format(e))       
@@ -67,10 +66,7 @@ class Tweet:
                     ori_tweet = jsonData['text']
                 
                     replaced_tweet, translated_tweet = wordFormat.translateTweet(jsonData['text'])               
-                    jsonData['text'] = translated_tweet
-                
-                    if self.containKey(ori_tweet):
-                        fcm.send_default(jsonData)                 
+                    jsonData['text'] = translated_tweet                                 
                 
                     exportSheet.writeToSheet(jsonData['timestamp_ms'], ori_tweet, replaced_tweet, translated_tweet)            
                 print("Waiting for twitter msg...\n")                
@@ -93,10 +89,8 @@ class Tweet:
             data = {}                        
             userData = jsonData['user']                        
             userID = userData['id_str']
-            if userID == '3087502272':
-                data['text'] = "[Bus service]{}".format(jsonData['text'])
-            elif userID == '307781209' or userID == '80337313':
-                data['text'] = jsonData['text']
+            if userID == '38400130':
+                data['text'] = jsonData['text']            
             else:     
                 print('Ignore current tweet')
                 return
