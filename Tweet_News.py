@@ -151,13 +151,13 @@ class Tweet_News:
 # jsonStr = tweet.extractTweet(json.dumps(jsonData))
 # print(jsonStr)
 
-testStr = "Adele cancels remainder of world tour with throat infection https://t.co/S6Oa0P4xEW https://t.co/ZqNjxsfSlc"
+# testStr = "Adele cancels remainder of world tour with throat infection https://t.co/S6Oa0P4xEW https://t.co/ZqNjxsfSlc"
 
-arr = testStr.split(" ")
-newStr = ""
-for item in arr:
-    if "http" not in item:
-        newStr += " {}".format(item)            
+# arr = testStr.split(" ")
+# newStr = ""
+# for item in arr:
+#     if "http" not in item:
+#         newStr += " {}".format(item)            
         
-print(newStr.strip())
+# print(newStr.strip())
 
