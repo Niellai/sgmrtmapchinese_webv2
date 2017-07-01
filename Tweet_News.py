@@ -87,8 +87,13 @@ class Tweet_News:
             data = {}                        
             userData = jsonData['user']                        
             userID = userData['id_str']
-            if userID == '38400130':
-                data['text'] = jsonData['text']            
+            if userID == '38400130':                
+                arr = jsonData['text'].split(" ")
+                dataStr = ""
+                for item in arr:
+                    if "http" not in item:
+                        dataStr += " {}".format(item)    
+                data['text'] = dataStr.strip()
             else:     
                 print('Ignore current tweet')
                 return
@@ -136,7 +141,7 @@ class Tweet_News:
         return re.compile(r'\b({0})\b'.format(w), flags=re.IGNORECASE).search
 
 
-# In[9]:
+# In[7]:
 
 # Testing purpose
 # wordFormat = WordFormat()
@@ -145,4 +150,14 @@ class Tweet_News:
 # jsonData = wordFormat.readJsonFile('singleTweet.json')
 # jsonStr = tweet.extractTweet(json.dumps(jsonData))
 # print(jsonStr)
+
+testStr = "Adele cancels remainder of world tour with throat infection https://t.co/S6Oa0P4xEW https://t.co/ZqNjxsfSlc"
+
+arr = testStr.split(" ")
+newStr = ""
+for item in arr:
+    if "http" not in item:
+        newStr += " {}".format(item)            
+        
+print(newStr.strip())
 
