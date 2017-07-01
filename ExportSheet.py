@@ -31,7 +31,7 @@ class ExportSheet:
         except Exception as e:
             print("writeToSheet Error: {}".format(e))
             
-    def writeToSheet2(self, timestampStr, ori_tweet):
+    def writeToSheet2(self, timestampStr, ori_tweet, replaced_tweet, translated_tweet):
         try:   
             json_key = json.load(open('creds.json'))
             scope = ['https://spreadsheets.google.com/feeds']
@@ -42,7 +42,7 @@ class ExportSheet:
             sh2 = sh2.get_worksheet(1)
 
             print("Writing to sheets")
-            new_row = [timestampStr, ori_tweet, None, None]    
+            new_row = [timestampStr, ori_tweet, replaced_tweet, translated_tweet]    
             sh2.insert_row(new_row, index=2)
             print("Write to sheets completed")
         except Exception as e:
