@@ -22,8 +22,10 @@ from ExportSheet import ExportSheet
 class Tweet:
     
     # define keys to look out for in tweet msg
-    keyList = ['incident', 'no train', 'fault', 'resumed', 'svc', 'svcs',
-           'service', 'serivces', '[NSL]', '[EWL]', '[CCL]', '[DTL]', '[TSL]']
+    keyList = ['incident', 'no train', 'fault', 'resumed',
+               'svc', 'svcs', 'svc.', 'svcs.', 'service', 'serivces', 'stns',
+               '[NSL]', '[EWL]', '[CCL]', '[DTL]', '[TSL]', '[NEL]',
+               'NSL', 'EWL', 'CCL', 'DTL', 'TSL', 'NEL']
 
     # Variables that contains the user credentials to access Twitter API 
     ACCESS_TOKEN = '80337313-lbccFWgRT0BM8VGvepY9foRbiAXbdKYJOo8kC1NFC'
