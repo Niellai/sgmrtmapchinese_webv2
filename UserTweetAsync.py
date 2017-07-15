@@ -75,6 +75,6 @@ class UserTweet:
 
 # In[ ]:
 
-# userTweet = UserTweet()
-# userTweet.listen()
+userTweet = UserTweet()
+userTweet.listen()
 
