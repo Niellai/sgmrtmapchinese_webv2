@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[2]:
+# In[3]:
 
 import json
 import codecs
@@ -15,7 +15,7 @@ import import_notebook
 from Translator import Translator
 
 
-# In[1]:
+# In[6]:
 
 '''
 Replacement of abb words and train line and station names
@@ -52,7 +52,7 @@ class WordFormat:
             sentence = sentence.replace(" ", "")
             for station in self.station_tran:
                 name = station["name"].replace(" ", "")
-                ch_name = station["ch_name"]
+                ch_name = "[{}]{}".format(station["id"], station["ch_name"])
                 sentence = re.sub(r"{}".format(name), ch_name, sentence, flags=re.IGNORECASE)            
             return sentence
         except Exception as e:
@@ -81,14 +81,14 @@ class WordFormat:
             print("Error in translateTweet: {}".format(e))
 
 
-# In[15]:
+# In[7]:
 
 '''
 Example / Test methods
 '''
 # sentence = 'SMRT launches new three-door bus on service 190 between Choa Chu Kang and Chinatown'
 # wordFormat = WordFormat()
-# translator = Translator()
 
-# replaced_tweet = wordFormat.replaceAbbsWords(sentence)
+# replaced_tweet = wordFormat.replaceStationWords(sentence)
+# print(replaced_tweet)
 
