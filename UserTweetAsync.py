@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[1]:
+# In[2]:
 
 import asyncio
 import datetime
@@ -20,7 +20,7 @@ from WordFormat import WordFormat
 from ExportSheet import ExportSheet
 
 
-# In[2]:
+# In[3]:
 
 '''
 User tweet will listen and store all tweets that is send to @SG_SMRT
@@ -28,10 +28,10 @@ No translation is done but replace of abbrivation words is carried out
 '''
 class UserTweet:
     # Variables that contains the user credentials to access Twitter API 
-    ACCESS_TOKEN = '80337313-lbccFWgRT0BM8VGvepY9foRbiAXbdKYJOo8kC1NFC'
-    ACCESS_SECRET = 'GyPBROB8XPkz3YwRQoJlyNg1kud4ylCPHS73z5M34V7Es'
-    CONSUMER_KEY = 'LZ30cTS3iKCZ6XDAlTeTD54xj'
-    CONSUMER_SECRET = '1yB0ydySHdFKYcMw0baxYkhzMPgzTkfYvNApoGdfCEnGVqTxV3'
+    ACCESS_TOKEN = '80337313-rAQ0Gt8CEe3qnrWiL6iJ0GyAcfS8d9hjrKGQQE9mG'
+    ACCESS_SECRET = 'fro20QRxZRMUjk4RtM2fLo6qqG5FKdP2jbI4ObkDH1xim'
+    CONSUMER_KEY = 'h6CH9ELrd3Xv6BIKpftJQJEjF'
+    CONSUMER_SECRET = 'Emy1z0aIQGF0aU8g9nuK8iAojUGH7oyMdNvuafYSKEkSK3nzkm'
 
     def listen(self):
         wordFormat = WordFormat()
@@ -73,7 +73,7 @@ class UserTweet:
         
 
 
-# In[ ]:
+# In[4]:
 
 userTweet = UserTweet()
 userTweet.listen()
