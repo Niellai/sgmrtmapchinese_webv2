@@ -90,32 +90,8 @@ class UserTweet:
             elif userID == '307781209' or userID == '80337313':
                 data['text'] = jsonData['text']
             else:     
-                print('Ignore current tweet')
-                return
-            
-            # Extracting entities, for media url         
-            try:
-                if 'extended_tweet' in jsonData:
-                    extTweetData = jsonData['extended_tweet']
-                    entitiesData = extTweetData['entities']
-                    mediaData = entitiesData['media'][0]
-                    media_url = mediaData['media_url']
-                    if len(media_url) > 0:
-                        data['media_url'] = media_url                    
-            except Exception as e:
-                print('extractTweet > extended_tweet error:{}'.format(e)) 
-                
-            try:
-                if 'entities' in jsonData:
-                    entitiesData = jsonData['entities']
-                    mediaData = entitiesData['media'][0]
-                    media_url = mediaData['media_url']
-                    if len(media_url) > 0:
-                        data['media_url'] = media_url
-            except Exception as e:
-                print('extractTweet > entities error:{}'.format(e))                               
-            
-            data['timestamp_ms'] = int(jsonData['timestamp_ms'])        
+                data['text'] = jsonData['text']                                                   
+                        
             jsonDataStr = json.dumps(data, ensure_ascii=False)   
             print("Tweet received: {}".format(data['text']))
             return json.loads(jsonDataStr)    
