@@ -12,7 +12,7 @@ def is_lock_free():
     lock_socket = socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM)
     try:
         # this should be unique. using your username as a prefix is a convention
-        lock_id = "niellai.tweetListener"
+        lock_id = "niellai.user.tweetListener"
         lock_socket.bind('\0' + lock_id)
         logging.debug("Acquired lock %r" % (lock_id,))
         return True
@@ -24,6 +24,6 @@ def is_lock_free():
 if not is_lock_free():
     sys.exit()
     
-tweet = Tweet()
-tweet.listen()
+userTweetAsync = UserTweetAsync()
+userTweetAsync.listen()
 

@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[2]:
+# In[1]:
 
 import json
 import re
@@ -53,7 +53,7 @@ class Tweet:
             # My ID: 80337313
             # SMRT_Singapore: 307781209
             # SBSTransit_Ltd: 3087502272
-            stream = twitter_stream.statuses.filter(follow="307781209, 3087502272, 80337313", language="en")
+            stream = twitter_stream.statuses.filter(follow="307781209, 80337313, 3087502272", language="en")
         except Exception as e: 
             print("Connecting to twitter error: {}".format(e))       
         
