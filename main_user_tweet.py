@@ -3,7 +3,7 @@ import logging
 import socket
 import sys
 import re
-from Tweet_News import Tweet_News
+from UserTweetAsync import UserTweetAsync
 
 lock_socket = None 
 
@@ -24,6 +24,6 @@ def is_lock_free():
 if not is_lock_free():
     sys.exit()
     
-tweet_News = Tweet_News()
-tweet_News.listen()
+userTweetAsync = UserTweetAsync()
+userTweetAsync.listen()
 
