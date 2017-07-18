@@ -24,6 +24,6 @@ def is_lock_free():
 if not is_lock_free():
     sys.exit()
     
-userTweetAsync = UserTweetAsync()
-userTweetAsync.listen()
+tweet = Tweet()
+tweet.listen()
 
