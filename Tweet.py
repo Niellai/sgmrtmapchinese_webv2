@@ -71,8 +71,11 @@ class Tweet:
                     replaced_tweet, translated_tweet = wordFormat.translateTweet(jsonData['text'])               
                     jsonData['text'] = translated_tweet
                 
-                    if self.containKey(ori_tweet):
-                        fcm.send_default(jsonData)                 
+                    if self.containKey(ori_tweet):                       
+                        if jsonData['id_str'] == '3087502272' or jsonData['id_str'] == '307781209':
+                            fcm.send_default(jsonData)
+                        else:
+                            fcm.send_topic(jsonData, 'debug')
                 
                     exportSheet.writeToSheet(jsonData['timestamp_ms'], ori_tweet, replaced_tweet, translated_tweet)            
                 print("Waiting for twitter msg...\n")                
