@@ -99,6 +99,7 @@ class Tweet:
             data = {}                        
             userData = jsonData['user']                        
             userID = userData['id_str']
+            data['id_str'] = userID
             if userID == '3087502272':
                 data['text'] = "[Bus service]{}".format(jsonData['text'])
                 print("Received tweet: {}".format(data['text']))                
