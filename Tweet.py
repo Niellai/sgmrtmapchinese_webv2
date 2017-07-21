@@ -70,13 +70,12 @@ class Tweet:
                 
                     replaced_tweet, translated_tweet = wordFormat.translateTweet(jsonData['text'])               
                     jsonData['text'] = translated_tweet
-                
-                    if self.containKey(ori_tweet):                       
-                        if jsonData['id_str'] == '3087502272' or jsonData['id_str'] == '307781209':
-                            fcm.send_default(jsonData)
-                        else:
-                            fcm.send_topic(jsonData, 'debug')
-                
+                                         
+                    if jsonData['id_str'] == '3087502272' or jsonData['id_str'] == '307781209':
+                        fcm.send_default(jsonData)
+                    else:
+                        fcm.send_topic(jsonData, 'debug')
+
                     exportSheet.writeToSheet(jsonData['timestamp_ms'], ori_tweet, replaced_tweet, translated_tweet)            
                 print("Waiting for twitter msg...\n")                
             except Exception as e: 
@@ -100,8 +99,10 @@ class Tweet:
             userID = userData['id_str']
             if userID == '3087502272':
                 data['text'] = "[Bus service]{}".format(jsonData['text'])
+                print("Received tweet: {}".format(data['text']))                
             elif userID == '307781209' or userID == '80337313':
                 data['text'] = jsonData['text']
+                print("Received tweet: {}".format(data['text']))
             else:     
                 print('Ignore current tweet')
                 return
