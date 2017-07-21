@@ -73,8 +73,10 @@ class Tweet:
                                          
                     if jsonData['id_str'] == '3087502272' or jsonData['id_str'] == '307781209':
                         fcm.send_default(jsonData)
+                        print("Send default notification")
                     else:
                         fcm.send_topic(jsonData, 'DEBUG')
+                        print("Send debug notification")
 
                     exportSheet.writeToSheet(jsonData['timestamp_ms'], ori_tweet, replaced_tweet, translated_tweet)            
                 print("Waiting for twitter msg...\n")                
