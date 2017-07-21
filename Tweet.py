@@ -74,7 +74,7 @@ class Tweet:
                     if jsonData['id_str'] == '3087502272' or jsonData['id_str'] == '307781209':
                         fcm.send_default(jsonData)
                     else:
-                        fcm.send_topic(jsonData, 'debug')
+                        fcm.send_topic(jsonData, 'DEBUG')
 
                     exportSheet.writeToSheet(jsonData['timestamp_ms'], ori_tweet, replaced_tweet, translated_tweet)            
                 print("Waiting for twitter msg...\n")                
