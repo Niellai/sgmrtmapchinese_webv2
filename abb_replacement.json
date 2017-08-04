@@ -31,5 +31,16 @@
   "ctr" : "centre",
   "opp" : "opposite",
   "bldg" : "building",
-  "twds" : "towards"
+  "twds" : "towards",
+  "PIE": "Pan Island Expressway",
+  "AYE": "Ayer Rajah Expressway",
+  "NSC": "North–South Corridor",
+  "ECP": "East Coast Parkway",
+  "CTE": "Central Expressway",
+  "TPE": "Tampines Expressway",
+  "KPE": "Kallang-Paya Lebar Expressway",
+  "SLE": "Seletar Expressway",
+  "BKE": "Bukit Timah Expressway",
+  "KJE": "Kranji Expressway",
+  "MCE": "Marina Coastal Expressway"
 }
