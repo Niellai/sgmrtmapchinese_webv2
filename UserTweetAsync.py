@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[1]:
+# In[4]:
 
 import asyncio
 import datetime
@@ -20,14 +20,16 @@ from WordFormat import WordFormat
 from ExportSheet import ExportSheet
 
 
-# In[2]:
+# In[5]:
 
 '''
 User tweet will listen and store all tweets that is send to @SG_SMRT
 No translation is done but replace of abbrivation words is carried out
 '''
 class UserTweet:
-    # Variables that contains the user credentials to access Twitter API 
+    keyList = ['RT']
+    
+    # Variables that contains the user credentials to access Twitter API     
     ACCESS_TOKEN = '80337313-rAQ0Gt8CEe3qnrWiL6iJ0GyAcfS8d9hjrKGQQE9mG'
     ACCESS_SECRET = 'fro20QRxZRMUjk4RtM2fLo6qqG5FKdP2jbI4ObkDH1xim'
     CONSUMER_KEY = 'h6CH9ELrd3Xv6BIKpftJQJEjF'
@@ -74,7 +76,11 @@ class UserTweet:
         try:            
             jsonData = json.loads(tweetsStr)                        
             
-            # Ignore retweet
+            # Ignore retweet through str
+            if containKey(tweetsStr):
+                print('Retweet ignored')
+                return None
+            # Ignore retweet through json property
             if jsonData['retweeted'] == True:
                 print('Retweet ignored')
                 return None
@@ -94,10 +100,23 @@ class UserTweet:
             print("Tweet received: {}".format(data['text']))
             return json.loads(jsonDataStr)    
         except Exception as e: 
-            print("ExtractTweet error: {}".format(e))           
+            print("ExtractTweet error: {}".format(e))         
+            
+    # Will only match exact word in the sentence
+    def containKey(self, jsonData):
+        isContainKey = False
+        for key in self.keyList:    
+            result = self.findWholeWord(key)(jsonData)
+            if result is not None:        
+                isContainKey = True
+                break
+        return isContainKey
+    
+    def findWholeWord(self, w):
+        return re.compile(r'\b({0})\b'.format(w), flags=re.IGNORECASE).search
 
 
-# In[3]:
+# In[7]:
 
 # exportSheet = ExportSheet()
 # thread = Thread(target=exportSheet.writeToSheet3("ori_tweet", "replaced_tweet"))
