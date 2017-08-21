@@ -50,7 +50,7 @@ class ExportSheet:
         except Exception as e:
             print("writeToSheet Error: {}".format(e))
             
-    def writeToSheet3Async(self, ori_tweet, replaced_tweet):
+    def writeToSheet3(self, ori_tweet, replaced_tweet):
         try:
             json_key = json.load(open('creds.json'))
             scope = ['https://spreadsheets.google.com/feeds']
@@ -66,6 +66,10 @@ class ExportSheet:
             sh2.insert_row(new_row, index=2)
             print("Write to sheets completed")
         except Exception as e:
-            print("writeToSheet Error: {}".format(e))
-            
+            print("writeToSheet Error: {}".format(e))            
+
+
+# In[13]:
+
+
 

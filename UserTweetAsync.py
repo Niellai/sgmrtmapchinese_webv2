@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[2]:
+# In[1]:
 
 import asyncio
 import datetime
@@ -20,7 +20,7 @@ from WordFormat import WordFormat
 from ExportSheet import ExportSheet
 
 
-# In[3]:
+# In[2]:
 
 '''
 User tweet will listen and store all tweets that is send to @SG_SMRT
@@ -62,10 +62,10 @@ class UserTweet:
                 if jsonData != None:
                     ori_tweet = jsonData['text']
                     replaced_tweet = wordFormat.replaceAbbsWords(jsonData['text'])           
-                    exportSheet.writeToSheet3Async(ori_tweet, replaced_tweet)
-#                     thread = Thread(target=exportSheet.writeToSheet3Async(ori_tweet, replaced_tweet))
-#                     thread.start()
-#                     thread.join()
+                    # exportSheet.writeToSheet3(ori_tweet, replaced_tweet)
+                    thread = Thread(target=exportSheet.writeToSheet3(ori_tweet, replaced_tweet))
+                    thread.start()
+                    thread.join()
             except Exception as e:    
                  print("Error in tweet stream: {}".format(e))
 
@@ -97,12 +97,10 @@ class UserTweet:
             print("ExtractTweet error: {}".format(e))           
 
 
-# In[12]:
-
-
+# In[3]:
 
 # exportSheet = ExportSheet()
-# thread = Thread(target=exportSheet.writeToSheet3Async("ori_tweet", "replaced_tweet"))
+# thread = Thread(target=exportSheet.writeToSheet3("ori_tweet", "replaced_tweet"))
 # thread.start()
 # thread.join()
 
