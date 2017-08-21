@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[1]:
+# In[2]:
 
 import asyncio
 import datetime
@@ -20,7 +20,7 @@ from WordFormat import WordFormat
 from ExportSheet import ExportSheet
 
 
-# In[ ]:
+# In[3]:
 
 '''
 User tweet will listen and store all tweets that is send to @SG_SMRT
@@ -61,10 +61,11 @@ class UserTweet:
                 jsonData = self.extractTweet(tweetJson)                                            
                 if jsonData != None:
                     ori_tweet = jsonData['text']
-                    replaced_tweet = wordFormat.replaceAbbsWords(jsonData['text'])            
-                    thread = Thread(target=exportSheet.writeToSheet3Async(ori_tweet, replaced_tweet))
-                    thread.start()
-                    thread.join()
+                    replaced_tweet = wordFormat.replaceAbbsWords(jsonData['text'])           
+                    exportSheet.writeToSheet3Async(ori_tweet, replaced_tweet)
+#                     thread = Thread(target=exportSheet.writeToSheet3Async(ori_tweet, replaced_tweet))
+#                     thread.start()
+#                     thread.join()
             except Exception as e:    
                  print("Error in tweet stream: {}".format(e))
 
@@ -76,7 +77,7 @@ class UserTweet:
             # Ignore retweet
             if jsonData['retweeted'] == True:
                 print('Retweet ignored')
-                return
+                return None
             
             # Extracting userID
             data = {}                        
@@ -96,13 +97,27 @@ class UserTweet:
             print("ExtractTweet error: {}".format(e))           
 
 
-# In[2]:
+# In[12]:
+
+
 
 # exportSheet = ExportSheet()
 # thread = Thread(target=exportSheet.writeToSheet3Async("ori_tweet", "replaced_tweet"))
 # thread.start()
 # thread.join()
 
+# Testing retweeted file in tweet String
+# with open('singleTweet.json') as data_file:    
+#     data = json.load(data_file)
+#     tweetJson = json.dumps(data)
+
+# userTweet = UserTweet()
+# jsonData = userTweet.extractTweet(tweetJson)                                            
+# if jsonData != None:
+#     ori_tweet = jsonData['text']
+#     replaced_tweet = wordFormat.replaceAbbsWords(jsonData['text'])         
+#     print(replaced_tweet)
+                        
 # userTweet = UserTweet()
 # userTweet.listen()
 
