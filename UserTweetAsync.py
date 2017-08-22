@@ -77,7 +77,7 @@ class UserTweet:
             jsonData = json.loads(tweetsStr)                        
             
             # Ignore retweet through str
-            if containKey(tweetsStr):
+            if self.containKey(tweetsStr):
                 print('Retweet ignored')
                 return None
             # Ignore retweet through json property
