@@ -22,7 +22,7 @@ from ExportSheet import ExportSheet
 class Tweet:
     
     # define keys to look out for in tweet msg
-    keyList = ['incident', 'no train', 'fault', 'resumed',
+    keyList = ['incident', 'no train', 'fault', 'resumed', 'congestion',
                'svc', 'svcs', 'svc.', 'svcs.', 'service', 'serivces', 'stns',
                '[NSL]', '[EWL]', '[CCL]', '[DTL]', '[TSL]', '[NEL]',
                'NSL', 'EWL', 'CCL', 'DTL', 'TSL', 'NEL']
